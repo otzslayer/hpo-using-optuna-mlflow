@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Model artifacts
+catboost_info/
+mlruns/
