@@ -16,7 +16,7 @@ def identify_column_types(X: pd.DataFrame) -> Tuple[List, List]:
 
 
 def make_preprocess_pipeline(
-    num_cols: List[str], cat_cols: List[str]
+    num_cols: List[str], cat_col_list: List[str]
 ) -> ColumnTransformer:
     num_processor = Pipeline(
         steps=[
@@ -30,6 +30,6 @@ def make_preprocess_pipeline(
     )
 
     preprocessor = ColumnTransformer(
-        [("num", num_processor, num_cols), ("cat", cat_processor, cat_cols)]
+        [("num", num_processor, num_cols), ("cat", cat_processor, cat_col_list)]
     )
     return preprocessor
