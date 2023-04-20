@@ -83,4 +83,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        while True:
+            print("Hello World!")
+    except KeyboardInterrupt as e:
+        print("OK Bye...")
