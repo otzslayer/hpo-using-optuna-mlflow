@@ -6,6 +6,8 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler
+!pip install logger
+import logger
 
 
 def identify_column_types(X: pd.DataFrame) -> Tuple[List, List]:
@@ -32,4 +34,5 @@ def make_preprocess_pipeline(
     preprocessor = ColumnTransformer(
         [("num", num_processor, num_cols), ("cat", cat_processor, cat_cols)]
     )
+    logger.add("안녕하세요~~")
     return preprocessor
