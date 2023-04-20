@@ -9,7 +9,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 
 def identify_column_types(X: pd.DataFrame) -> Tuple[List, List]:
-    num_cols = X.select_dtypes("number").columns.tolist()
+    num_cols = X.select_dtypes("float").columns.tolist()
     cat_cols = X.select_dtypes("object").columns.tolist()
 
     return num_cols, cat_cols
