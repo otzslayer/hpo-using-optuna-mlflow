@@ -7,13 +7,11 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler
 
-
 def identify_column_types(X: pd.DataFrame) -> Tuple[List, List]:
     num_cols = X.select_dtypes("number").columns.tolist()
     cat_cols = X.select_dtypes("object").columns.tolist()
 
     return num_cols, cat_cols
-
 
 def make_preprocess_pipeline(
     num_cols: List[str], cat_cols: List[str]
@@ -32,4 +30,5 @@ def make_preprocess_pipeline(
     preprocessor = ColumnTransformer(
         [("num", num_processor, num_cols), ("cat", cat_processor, cat_cols)]
     )
+    
     return preprocessor
