@@ -18,6 +18,8 @@ def identify_column_types(X: pd.DataFrame) -> Tuple[List, List]:
 def make_preprocess_pipeline(
     num_cols: List[str], cat_cols: List[str]
 ) -> ColumnTransformer:
+    """ function name : make_preprocess_pipeline
+    """
     num_processor = Pipeline(
         steps=[
             ("imputer", SimpleImputer(strategy="most_frequent")),
@@ -26,7 +28,7 @@ def make_preprocess_pipeline(
     )
 
     cat_processor = Pipeline(
-        steps=[("imputer", SimpleImputer(strategy="constant", fill_value="None"))]
+        steps=[("imputer", SimpleImputer(strategy="most_frequent", fill_value="None"))]
     )
 
     preprocessor = ColumnTransformer(
