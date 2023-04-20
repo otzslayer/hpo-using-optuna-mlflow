@@ -9,4 +9,7 @@ def load_data() -> Tuple[pd.DataFrame, np.ndarray]:
 
     y = np.log1p(df["SalePrice"].ravel())
     X = df.drop(["Id", "Alley", "PoolQC", "Fence", "MiscFeature", "SalePrice"], axis=1)
-    return X, y
+    return X, y 
+
+def get_data_description(df: pd.DataFrame, **kwargs): 
+    return df.describe(**kwargs)
