@@ -20,7 +20,7 @@ def make_preprocess_pipeline(
 ) -> ColumnTransformer:
     num_processor = Pipeline(
         steps=[
-            ("imputer", SimpleImputer(strategy="median")),
+            ("imputer", SimpleImputer(strategy="most_frequent",missing_values=np.nan)),
             ("scaler", MaxAbsScaler()),
         ]
     )
