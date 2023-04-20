@@ -20,13 +20,13 @@ def make_preprocess_pipeline(
 ) -> ColumnTransformer:
     num_processor = Pipeline(
         steps=[
-            ("imputer", SimpleImputer(strategy="most_frequent")),
-            ("scaler", MinMaxScaler()),
+            ("imputer", SimpleImputer(strategy="median")),
+            ("scaler", MaxAbsScaler()),
         ]
     )
 
     cat_processor = Pipeline(
-        steps=[("imputer", SimpleImputer(strategy="constant", fill_value="None"))]
+        steps=[("imputer", SimpleImputer(strategy="median", fill_value="None"))]
     )
 
     preprocessor = ColumnTransformer(
