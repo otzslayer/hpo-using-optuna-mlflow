@@ -17,7 +17,7 @@ class Objective(object):
         pool = self.pool
 
         max_depth = trial.suggest_int("max_depth", 3, 10)
-        learning_rate = trial.suggest_float("learning_rate", 0.05, 0.3)
+        learning_rate = trial.suggest_float("learning_rate", 0.05, 0.2)
         subsample = trial.suggest_float("subsample", 0.75, 1)
         l2_leaf_reg = trial.suggest_float("l2_leaf_reg", 1e-5, 1e-1, log=True)
 
