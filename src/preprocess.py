@@ -26,7 +26,7 @@ def make_preprocess_pipeline(
     )
 
     cat_processor = Pipeline(
-        steps=[("imputer", SimpleImputer(strategy="constant", fill_value="None"))]
+        steps=[("imputer", SimpleImputer(strategy="most_frequent"))]
     )
 
     preprocessor = ColumnTransformer(
