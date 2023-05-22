@@ -7,7 +7,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler
 
-
+# define types of columns(categorical or numerical data)
 def identify_column_types(X: pd.DataFrame) -> Tuple[List, List]:
     num_cols = X.select_dtypes("number").columns.tolist()
     cat_cols = X.select_dtypes("object").columns.tolist()
