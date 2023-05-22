@@ -34,7 +34,7 @@ class Objective(object):
             params=params,
             num_boost_round=1000,
             nfold=5,
-            seed=0,
+            seed=12,
             early_stopping_rounds=30,
             verbose=False,
         )
