@@ -3,4 +3,4 @@ catboost==0.26.1
 optuna==2.9.1
 numpy==1.19.5
 scikit_learn==0.24.2
-mlflow
+torch==1.10.0
