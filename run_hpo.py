@@ -74,7 +74,7 @@ def main():
         direction="minimize",
         pruner=optuna.pruners.HyperbandPruner(max_resource="auto"),
     )
-
+    #test0522 by paik
     print("Optimize a model...")
     mlflow_cb = make_mlflow_callback(tracking_uri="mlruns", metric_name="RMSLE")
     study.optimize(
